@@ -16,6 +16,15 @@ public class App
         carReference.running = false;
         carReference.doorCount= 2;
 
+        Engine carEngine = new Engine();
+        carEngine.manufacturer = "Renault";
+        carEngine.capacity = 1.5;
+
+        carReference.engine = carEngine;
+
+        System.out.println("Engine Details... ");
+        System.out.println(carReference.engine.manufacturer);
+        System.out.println(carReference.engine.capacity);
 
         Car car2 = new Car();
         car2.name = "Audi";
