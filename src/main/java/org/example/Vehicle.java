@@ -18,6 +18,9 @@ public class Vehicle {
         totalCount++;
     }
 
+    public double accelerate (double speed){
+        return accelerate(speed, 1);
+    }
     public double accelerate(double speed, double durationInHours) {
         double mileageMultiplier = 1;
 
