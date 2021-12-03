@@ -7,6 +7,10 @@ public class App
     {
         System.out.println( "Welcome to the Racing Game!" );
 
+        Game game = new Game();
+        game.start();
+
+
         Engine carEngine = new Engine();
         carEngine.manufacturer = "Bavaria Motors";
         carEngine.capacity = 1.9;
@@ -25,9 +29,11 @@ public class App
         System.out.println(carReference.engine.manufacturer);
         System.out.println(carReference.engine.capacity);
 
-        double accelerationDistance = carReference.accelerate(60, 1);
+        double accelerationDistance = carReference.accelerate(150, 1);
+        double accelerationDistance1 = carReference.accelerate(60, 1);
 
         System.out.println("Acceleration distance: " + accelerationDistance);
+        System.out.println("Acceleration distance1: " + accelerationDistance1);
 
         Mechanic mechanic = new Mechanic();
         mechanic.repairVehicle(carReference);
