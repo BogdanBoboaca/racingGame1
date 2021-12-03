@@ -16,12 +16,13 @@ public class App
         carEngine.capacity = 1.9;
 
         Car carReference = new Car(carEngine);
-        carReference.name = "BMW";
-        carReference.color = "Red";
-        carReference.mileage = 9.8;
-        carReference.fuelLevel = 60;
-        carReference.maxSpeed = 200;
-        carReference.running = false;
+        carReference.setName("BMW");
+        carReference.setColor("Red");
+        carReference.setMileage(9.8);
+        carReference.setFuelLevel(60);
+        carReference.setMaxSpeed(200);
+        carReference.setRunning(false);
+
         carReference.doorCount= 2;
 
 
@@ -38,15 +39,15 @@ public class App
         Mechanic mechanic = new Mechanic();
         mechanic.repairVehicle(carReference);
 
-        System.out.println("Total traveled distance after repair " + carReference.traveledDistance);
+        System.out.println("Total traveled distance after repair " + carReference.getTraveledDistance());
 
 
-        System.out.println("First car name: " + carReference.name);
-        System.out.println("Color - " + carReference.color);
-        System.out.println("Mileage - " + carReference.mileage);
-        System.out.println("Fuel Level - " + carReference.fuelLevel);
-        System.out.println("Max Speed - " + carReference.maxSpeed);
-        System.out.println("Is the car running? - " + carReference.running);
+        System.out.println("First car name: " + carReference.getName());
+        System.out.println("Color - " + carReference.getColor());
+        System.out.println("Mileage - " + carReference.getMileage());
+        System.out.println("Fuel Level - " + carReference.getFuelLevel());
+        System.out.println("Max Speed - " + carReference.getMaxSpeed());
+        System.out.println("Is the car running? - " + carReference.isRunning());
         System.out.println("Number of doors - " + carReference.doorCount);
 
     }
