@@ -10,6 +10,13 @@ public class App
         Game game = new Game();
         game.start();
 
+        JokerVehicle jokerVehicle = new JokerVehicle();
+        jokerVehicle.setName("joker");
+        jokerVehicle.setFuelLevel(80);
+
+        jokerVehicle.accelerate(60, 1);
+
+        System.out.println("Joker's total distance: " + jokerVehicle.getTraveledDistance());
 
         Engine carEngine = new Engine();
         carEngine.manufacturer = "Bavaria Motors";
