@@ -59,6 +59,11 @@ public class Vehicle {
         return distance;
     }
 
+    @Override
+    public Vehicle clone() {
+        return new Vehicle();
+    }
+
     public String getName() {
         return name;
     }

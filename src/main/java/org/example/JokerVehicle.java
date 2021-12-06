@@ -13,4 +13,13 @@ public class JokerVehicle extends Vehicle{
         System.out.println("Cheating! ha ha...");
         return distance;
     }
+
+    @Override
+    public JokerVehicle clone() {
+        return new JokerVehicle();
+    }
+
+    public void fly() {
+        System.out.println("Flying!!!");
+    }
 }
