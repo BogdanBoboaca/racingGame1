@@ -1,11 +1,14 @@
 package org.example;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Game {
 
     private Track[] tracks = new Track[3];
-
+    private List<Vehicle> competitors = new ArrayList<>();
 
 
     public void start() {
@@ -14,13 +17,34 @@ public class Game {
         initializeTracks();
         displayTracks();
 
+        initializeCompetitors();
+
+        for (Vehicle vehicle : competitors) {
+            System.out.println("It's " + vehicle.getName() + "'s turn.");
+
+        }
+    }
+
+    private void initializeCompetitors() {
+
         int playersNumber = getPlayersNumber();
         System.out.println("Number of players from user: " + playersNumber);
 
-        String vehicleName = getVehicleNameFromUser();
-        System.out.println("Name from user: " + vehicleName);
+        for (int i = 1; i <= playersNumber; i++){
+            System.out.println("Adding player " + i);
 
+            Vehicle vehicle = new Vehicle();
+            vehicle.setName(getVehicleNameFromUser());
+            vehicle.setFuelLevel(80);
+            vehicle.setMileage(ThreadLocalRandom.current().nextDouble(6, 15));
+            vehicle.setMaxSpeed(ThreadLocalRandom.current().nextDouble(170, 300));
 
+            System.out.println("Vehicle for Player " + i + ": " + vehicle.getName() + " - Mileage: "
+                    + vehicle.getMileage());
+
+            competitors.add(vehicle);
+
+        }
     }
 
     private void initializeTracks() {
