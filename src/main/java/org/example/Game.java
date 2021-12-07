@@ -38,8 +38,15 @@ public class Game {
 
     private double getAccelerationSpeedFromUser() {
         System.out.println("Please enter acceleration speed. ");
-        Scanner scanner = new Scanner(System.in);
-        return scanner.nextDouble();
+
+        try {
+            Scanner scanner = new Scanner(System.in);
+            return scanner.nextDouble();
+        } catch (InputMismatchException e) {
+            System.out.println("You have entered an invalid value.");
+            return getAccelerationSpeedFromUser();
+        }
+
     }
 
     private Track getSelectedTrackFromUser() throws Exception {
@@ -56,6 +63,8 @@ public class Game {
             throw new RuntimeException("You have enter an invalid value");
         } catch (ArrayIndexOutOfBoundsException e) {
             throw new Exception("You have selected a non-existent track number.");
+        }finally {
+            System.out.println("Always executed");
         }
     }
 
